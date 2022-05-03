@@ -9,10 +9,14 @@
 
 Trabalho apresentado ao curso [BI MASTER](https://ica.puc-rio.ai/bi-master) como pré-requisito para conclusão de curso e obtenção de crédito na disciplina "Projetos de Sistemas Inteligentes de Apoio à Decisão".
 
-1-TCC-Tweets.ipynb
-2-TCC-Vader-Price.ipynb
-3-TCC-Stock-Vader.ipynb
-TCC-Resultados.docx
+[1-TCC-Tweets.ipynb]() - Tweet database analysis and wordcloud
+
+[2-TCC-Vader-Price.ipynb] - Tweet sentiment analysis (VADER)
+
+[3-TCC-Stock-Vader.ipynb] - Best LSTM configuration analysis for crypto, with incorporation of tweet sentiment analysis
+
+[TCC-Resultados.docx] - Graphical results of all analyzed LSTM configurations
+
 ---
 
 ### Resumo
@@ -51,9 +55,19 @@ A motivação deste trabalho tem como objetivo prático aplicar os conceitos de 
 Foi definido um algoritmo para análise de sentimentos do tweeter e outro para a série histórica do Bitcoin, onde diversos estudos de otimização e melhoria de resultados foram realizados. A última etapa foi aplicar no melhor modelo RNN-LSTM o conjunto da série histórica do Bitcoin com análise de sentimentos do tweet para entender o ganho de informação na análise em conjunto.
 
 
+
+
+
+
+
+[TCC-Resultados.docx] - Graphical results of all analyzed LSTM configurations
+
+
 #### Análise de sentimentos por VADER
 
 ##### i) Preparação e análise dos dados
+
+[1-TCC-Tweets.ipynb]() - Tweet database analysis and wordcloud
 
 Foi utilizado a base de dados 'Bitcoin_tweets.csv' [(https://www.kaggle.com/datasets/kaushiksuresh147/bitcoin-tweets)] com aproximadamente 2.000.000 registros coletados no período de 2021/02/10 a 2021/12/29. 
 
@@ -75,6 +89,8 @@ Na sequencia foi realizado a classificação do sentimento do texto por Vader (V
 
 Exclusivamente por definição da etapa de trabalho para desenvolvimento deste projeto, foi definido que este pipeline de tratamento de dados iria ter como arquivo csv de saída: tweet_formated.
 
+[2-TCC-Vader-Price.ipynb] - Tweet sentiment analysis (VADER)
+
 Este arquivo, por sua vez, foi manipulado para concatenar todas os sentimentos de forma diária, entretanto, ao iniciar esta manipulação verificou-se a existência de 11 (onze) registros com caracteres "['ETH', 'BTC', 'Bitcoin']" na coluna da data, impossibilitando inclusive o tratamento desta coluna para o formato datetime. Sanada esta inconsistência, fez-se breve estudo com base na soma e na média dos registros com o respectivo agrupamento destes sentimentos para expressar um único valor. O arquivo csv de saída apresenta a média diária dos sentimentos: 'tweet_sentiment'
 
 
@@ -82,6 +98,8 @@ Este arquivo, por sua vez, foi manipulado para concatenar todas os sentimentos d
 
 
 ##### i) Preparação e análise dos dados
+
+[3-TCC-Stock-Vader.ipynb] - Best LSTM configuration analysis for crypto, with incorporation of tweet sentiment analysis
 
 A série histórica do Bitcoin, oftida a partir do Yfinance, juntamente com o arquivo 'tweet_sentiment' foram manipulados dando origem à um novo banco de dados denominado 'treated_df' onde tem-se registro do valor de fechamento do Bitcoin com o respectivo sentimento para o período de de 2021/02/10 a 2021/12/29. Entretanto, nesta etapa do projeto, somente a série histórica do Bitcoin foi analisada.
 
